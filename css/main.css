@@ -65,7 +65,7 @@ body {
 }
 .nav-row {
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-end;
   align-items: center;
   column-gap: 30px;
   row-gap: 20px;
@@ -104,6 +104,7 @@ body {
   background-color: var(--accent);
 }
 .logo {
+  margin-right: auto;
   color: var(--header-text);
   font-size: 24px;
   font-family: "Poppins", sans-serif;
@@ -114,13 +115,18 @@ body {
 /* Dark-mode button */
 .dark-mode-btn {
   position: relative;
+
   display: flex;
   justify-content: space-between;
+
   width: 51px;
   height: 26px;
+
   background-color: #272727;
   border-radius: 50px;
   padding: 5px;
+
+  order: 1;
 }
 .dark-mode-btn::before {
   content: "";
@@ -343,6 +349,12 @@ left: 26px;
   margin-top: 0.5em;
 }
 @media (max-width: 620px) {
+  .nav-row{
+    justify-content: space-between;
+  }
+  .dark-mode-btn{
+    order: 0;
+  }
   .header {
     min-height: unset;
   }
